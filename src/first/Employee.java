@@ -15,6 +15,7 @@ public class Employee {
     private String position;
     private int sl_Credits;
     private int vl_Credits;
+    private int salary;
     
     // default constructor
     public Employee() {
@@ -26,11 +27,13 @@ public class Employee {
         this.position = "";
         this.sl_Credits = 5;
         this.vl_Credits = 5;
+        this.salary = 0;
+
         //standard sl and vl credits here in the Philippines, although it's management perogative and distinct per company.
     }
     
     public Employee (String name, int id, String dob, String address, String number,
-            String position, int sl_Credits, int vl_Credits) {
+            String position, int sl_Credits, int vl_Credits, int salary) {
         this.name = name;
         this.employee_id = id;
         this.address = address;
@@ -38,6 +41,8 @@ public class Employee {
         this.position = position;
         this.sl_Credits = sl_Credits;
         this.vl_Credits = vl_Credits;
+        this.dob =  dob;
+        this.salary = salary;
     }
     
 
@@ -73,6 +78,10 @@ public class Employee {
     
     public int getVlCredits() {
         return vl_Credits;
+    }
+    
+    public int getSalary() {
+    	return salary;
     }
     
     //setters
@@ -111,6 +120,9 @@ public class Employee {
         this.vl_Credits = vl;
     }
     
+    public void setSalary(int salary) {
+    	this.salary = salary;
+    }
     
     public static void main(String[] args) {
         // TODO Auto-generated method stub

@@ -59,6 +59,28 @@ public class EmployeeWrite {
 
 			System.out.println("enter the employee's position");
 			temp_emp.setPosition(scanner.nextLine());
+			if(temp_emp.getPosition().equalsIgnoreCase("tier 1")) {
+				temp_emp.setSalary(20000);
+				//System.out.println("1");
+			}
+			else if(temp_emp.getPosition().equalsIgnoreCase("tier 2")) {
+				temp_emp.setSalary(30000);
+			}
+			else if(temp_emp.getPosition().equalsIgnoreCase("tier 3")) {
+				temp_emp.setSalary(40000);
+			}
+			else if(temp_emp.getPosition().equalsIgnoreCase("tier 4")) {
+				temp_emp.setSalary(50000);
+			}
+			else if(temp_emp.getPosition().equalsIgnoreCase("tier 5")) {
+				temp_emp.setSalary(60000);
+			}
+			else if(temp_emp.getPosition().equalsIgnoreCase("tier 6")) {
+				temp_emp.setSalary(70000);
+			}
+			else if(temp_emp.getPosition().equalsIgnoreCase("tier 7")) {
+				temp_emp.setSalary(80000);
+			}
 
 			System.out.println("enter the employee's sick leave credits");
 			temp_emp.setSlCredits(Integer.parseInt(scanner.nextLine()));
@@ -67,7 +89,8 @@ public class EmployeeWrite {
 			temp_emp.setVlCredits(Integer.parseInt(scanner.nextLine()));
 			
 			employeeMotors.add(new Employee(temp_emp.getName(),temp_emp.getId(),temp_emp.getDate(), temp_emp.getAddress(),
-					temp_emp.getContactNumber(),temp_emp.getPosition(),temp_emp.getSlCredits(),temp_emp.getVlCredits()));
+					temp_emp.getContactNumber(),temp_emp.getPosition(),temp_emp.getSlCredits(),temp_emp.getVlCredits(),
+					temp_emp.getSalary()));
 
 			
 		}
@@ -79,12 +102,12 @@ public class EmployeeWrite {
         CSVWriter writer = new CSVWriter(new FileWriter(csvFile));
 
         // Define headers for the CSV file
-        String[] headers = {"Employee_name", "ID", "DOB", "Address", "Contact Number", "Position", "SL credits","VL Credits"};
+        String[] headers = {"Employee_name", "ID", "DOB", "Address", "Contact Number", "Position", "SL credits","VL Credits","salary"};
         writer.writeNext(headers); // Write headers to the CSV
 
         // Iterate over each student to write their data
         for (Employee emp : employeeMotors) {
-            String[] data = new String[8]; // Array to hold data for employee 
+            String[] data = new String[9]; // Array to hold data for employee 
             data[0] = emp.getName(); 
             data[1] = Integer.toString(emp.getId()); // 
             data[2] = emp.getDate();
@@ -93,7 +116,7 @@ public class EmployeeWrite {
             data[5] = emp.getPosition();  
             data[6] = Integer.toString(emp.getSlCredits()); 
             data[7] = Integer.toString(emp.getVlCredits()); 
-           
+            data[8] = Integer.toString(emp.getSalary());
             writer.writeNext(data);
             }
         writer.close(); // Close the writer to finalize writing and free resources
