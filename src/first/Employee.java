@@ -2,7 +2,7 @@
 // Members: Wilson Co, Leoncio Pineda,
 package first;
 
-//import java.util.Date;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Employee {
@@ -16,6 +16,7 @@ public class Employee {
     private int sl_Credits;
     private int vl_Credits;
     private int salary;
+    private Date creationTime;
     
     // default constructor
     public Employee() {
@@ -28,12 +29,12 @@ public class Employee {
         this.sl_Credits = 5;
         this.vl_Credits = 5;
         this.salary = 0;
-
+        this.creationTime = null;
         //standard sl and vl credits here in the Philippines, although it's management perogative and distinct per company.
     }
     
     public Employee (String name, int id, String dob, String address, String number,
-            String position, int sl_Credits, int vl_Credits, int salary) {
+            String position, int sl_Credits, int vl_Credits, int salary, Date timeCreated) {
         this.name = name;
         this.employee_id = id;
         this.address = address;
@@ -43,6 +44,7 @@ public class Employee {
         this.vl_Credits = vl_Credits;
         this.dob =  dob;
         this.salary = salary;
+        this.creationTime = timeCreated;
     }
     
 
@@ -84,6 +86,10 @@ public class Employee {
     	return salary;
     }
     
+    public Date getCreationTime() {
+    	return creationTime;
+    }
+    
     //setters
     //public Employee (String name, int id, String dob, String address, String number,
     //        String position, int sl_Credits, int vl_Credits)
@@ -122,6 +128,10 @@ public class Employee {
     
     public void setSalary(int salary) {
     	this.salary = salary;
+    }
+    
+    public void setCreationTime(Date time) {
+    	this.creationTime = time;
     }
     
     public static void main(String[] args) {

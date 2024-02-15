@@ -49,7 +49,10 @@ public class EmployeeRead extends JFrame {
             public void run() {
                 try {
 					new EmployeeRead();
-				} catch (CsvValidationException | IOException e) {
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (CsvValidationException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

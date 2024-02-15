@@ -88,9 +88,12 @@ public class EmployeeWrite {
 			System.out.println("enter the employee's vacation leave credits");
 			temp_emp.setVlCredits(Integer.parseInt(scanner.nextLine()));
 			
+			Date timeCreated = new Date();
+			temp_emp.setCreationTime(timeCreated);
+			
 			employeeMotors.add(new Employee(temp_emp.getName(),temp_emp.getId(),temp_emp.getDate(), temp_emp.getAddress(),
 					temp_emp.getContactNumber(),temp_emp.getPosition(),temp_emp.getSlCredits(),temp_emp.getVlCredits(),
-					temp_emp.getSalary()));
+					temp_emp.getSalary(), temp_emp.getCreationTime() ));
 
 			
 		}
@@ -107,7 +110,7 @@ public class EmployeeWrite {
 
         // Iterate over each student to write their data
         for (Employee emp : employeeMotors) {
-            String[] data = new String[9]; // Array to hold data for employee 
+            String[] data = new String[10]; // Array to hold data for employee 
             data[0] = emp.getName(); 
             data[1] = Integer.toString(emp.getId()); // 
             data[2] = emp.getDate();
@@ -117,6 +120,7 @@ public class EmployeeWrite {
             data[6] = Integer.toString(emp.getSlCredits()); 
             data[7] = Integer.toString(emp.getVlCredits()); 
             data[8] = Integer.toString(emp.getSalary());
+            data[9] = emp.getCreationTime().toString();
             writer.writeNext(data);
             }
         writer.close(); // Close the writer to finalize writing and free resources
