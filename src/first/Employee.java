@@ -21,6 +21,8 @@ public class Employee {
     private double philhealthContri;
     private double pagibigContri;
     private double netPay;
+    private String username;
+    private String password;
     
     // default constructor
     public Employee() {
@@ -39,12 +41,14 @@ public class Employee {
         this.philhealthContri = 0;
         this.pagibigContri = 0;
         this.netPay = 0;
+        this.username = "";
+        this.password = "";
 
         
     }
     
     public Employee (String name, int id, String dob, String address, String number,
-            String position, int sl_Credits, int vl_Credits, int salary) {
+            String position, int sl_Credits, int vl_Credits, int salary, String username, String password) {
         this.name = name;
         this.employee_id = id;
         this.address = address;
@@ -54,6 +58,9 @@ public class Employee {
         this.vl_Credits = vl_Credits;
         this.dob =  dob;
         this.salary = salary;
+        this.username = username;
+        this.password = password;
+        
     }
     
 
@@ -154,6 +161,7 @@ public class Employee {
     	return salary;
     }
     
+
     /*this.witholdingTax = 0;
     this.sssContri = 0;
     this.philhealthContri = 0;
@@ -178,6 +186,14 @@ public class Employee {
     public double getNetPay() {
     	return netPay;
     } 
+    
+    public String getUsername() {
+    	return username;
+    }
+    
+    public String getPassword() {
+    	return password;
+    }
     
     //setters
     //public Employee (String name, int id, String dob, String address, String number,
@@ -217,6 +233,14 @@ public class Employee {
     
     public void setSalary(int salary) {
     	this.salary = salary;
+    }
+    
+    public void setUsername(String username) {
+    	this.username = username;
+    }
+    
+    public void setPassword(String password) {
+    	this.password = password;
     }
     
     public static void main(String[] args) {

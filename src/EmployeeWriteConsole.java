@@ -90,7 +90,7 @@ public class EmployeeWriteConsole {
 			
 			employeeMotors.add(new Employee(temp_emp.getName(),temp_emp.getId(),temp_emp.getDate(), temp_emp.getAddress(),
 					temp_emp.getContactNumber(),temp_emp.getPosition(),temp_emp.getSlCredits(),temp_emp.getVlCredits(),
-					temp_emp.getSalary()));
+					temp_emp.getSalary(),temp_emp.getUsername(),temp_emp.getPassword()));
 
 			
 		}

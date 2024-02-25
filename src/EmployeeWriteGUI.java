@@ -27,6 +27,8 @@ public class EmployeeWriteGUI {
     private JTextField textFieldSlCredits;
     private JTextField textFieldVlCredits;
     private JTextField textFieldSalary;
+    private JTextField textFieldUsername;
+    private JTextField textFieldPassword;
 
     private List<Employee> employees = new ArrayList<>();
 
@@ -142,6 +144,24 @@ public class EmployeeWriteGUI {
         textFieldSalary.setColumns(10);
         textFieldSalary.setBounds(150, 366, 130, 26);
         frame.getContentPane().add(textFieldSalary);
+        
+        JLabel lblUsername = new JLabel("Username:");
+        lblUsername.setBounds(34, 410, 61, 16);
+        frame.getContentPane().add(lblUsername);
+        
+        textFieldUsername = new JTextField();
+        textFieldUsername.setColumns(10);
+        textFieldUsername.setBounds(150, 407, 130, 26);
+        frame.getContentPane().add(textFieldUsername);
+        
+        JLabel lblPassword = new JLabel("Password:");
+        lblPassword.setBounds(34, 451, 61, 16);
+        frame.getContentPane().add(lblPassword);
+        
+        textFieldPassword = new JTextField();
+        textFieldPassword.setColumns(10);
+        textFieldPassword.setBounds(200, 448, 130, 26);
+        frame.getContentPane().add(textFieldPassword);
 
         JButton btnAdd = new JButton("Add Employee Data");
         btnAdd.addActionListener(new ActionListener() {
@@ -149,7 +169,7 @@ public class EmployeeWriteGUI {
                 addEmployee();
             }
         });
-        btnAdd.setBounds(34, 410, 180, 29);
+        btnAdd.setBounds(34, 492, 180, 29);
         frame.getContentPane().add(btnAdd);
 
         JButton btnUpdate = new JButton("Update Employee Data");
@@ -158,7 +178,7 @@ public class EmployeeWriteGUI {
                 updateEmployee();
             }
         });
-        btnUpdate.setBounds(220, 410, 180, 29);
+        btnUpdate.setBounds(220, 492, 180, 29);
         frame.getContentPane().add(btnUpdate);
 
         JButton btnDelete = new JButton("Delete Employee Data");
@@ -167,7 +187,7 @@ public class EmployeeWriteGUI {
                 deleteEmployee();
             }
         });
-        btnDelete.setBounds(410, 410, 180, 29);
+        btnDelete.setBounds(410, 492, 180, 29);
         frame.getContentPane().add(btnDelete);
     }
 
@@ -182,8 +202,10 @@ public class EmployeeWriteGUI {
             int slCredits = Integer.parseInt(textFieldSlCredits.getText());
             int vlCredits = Integer.parseInt(textFieldVlCredits.getText());
             int salary = Integer.parseInt(textFieldSalary.getText());
+            String username = textFieldUsername.getText();
+            String password = textFieldPassword.getText();
 
-            Employee newEmployee = new Employee(name, id, dob, address, contactNumber, position, slCredits, vlCredits, salary);
+            Employee newEmployee = new Employee(name, id, dob, address, contactNumber, position, slCredits, vlCredits, salary, username, password);
             newEmployee.calculateContri();
             employees.add(newEmployee);
   
@@ -219,3 +241,10 @@ public class EmployeeWriteGUI {
         writer.close();
     }
 }
+
+
+// pending
+// 
+// log in portal
+// deletion  functionality, leave applications, 
+// 
